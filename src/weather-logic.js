@@ -1,5 +1,5 @@
 
-const weatherApp = () => {
+/*const weatherApp = () => {
     const form = document.querySelector("form");
     const search = document.querySelector("#search");
     const buttonSearch = document.querySelector("button")
@@ -18,7 +18,7 @@ const weatherApp = () => {
     //document.addEventListener("DOMContentLoaded", fetchWeatherData);
 }
 
-export { weatherApp }
+export { weatherApp }/*
 
 
 

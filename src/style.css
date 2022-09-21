@@ -1,0 +1,12 @@
+.container {
+    width: 100vw;
+    height: 98vh;
+    border: 1px solid blue; 
+}
+
+.weather-container{
+    border: 1px solid blue; 
+    width: 25vw;
+    height: 10vh;
+
+}
