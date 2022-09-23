@@ -1,3 +1,9 @@
+body {
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
 .container {
     width: 100vw;
     height: 98vh;
@@ -10,3 +16,4 @@
     height: 10vh;
 
 }
+
