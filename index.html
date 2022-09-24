@@ -9,31 +9,56 @@
 </head>
 <body>
     <div class="container">
-        <div class="weather-container"></div>
-        <div class="location-container"></div>
-        <div class="temp-container"></div>
-        <div class="form-container">
-            <form>
-                <input id="search" type="text" class="input" placeholder="Search Location..."/>
-                <button id="clear"  type="submit">Search</button>
-            </form>
+        <div class="main-content">
+            <div class="weather-container content"></div>
+            <div class="location-container content"></div>
+            <div class="temp-container content"></div>
+            <div class="icon-container content">
+                <img src="" class="icon-img">
+            </div>
+            <div class="form-container content">
+                <form>
+                    <input id="search" type="text" class="input" placeholder="Search Location..."/>
+                    <button id="clear"  type="submit">Search</button>
+                </form>
+                </div>
         </div>
         <div class="main-container">
-            <div>
-                <p class="feels_like">Feels like</p>
-                <p class="feels_like data" id="feels_like"></p>
+            <div class="box">
+                <div>
+                    <img src="temp/feels-like.png" class="temp">
+                </div>
+                <div class="box one">
+                    <span class="feels_like main">Feels like</span>
+                    <span class="feels_like data" id="feels_like"></span>
+                </div>
             </div>
-            <div>
-                <p class="humidity">Humidity</p>
-                <p class="humidity data" id="humidity"></p>
+            <div class="box">
+                <div>
+                    <img src="temp/humidity.png" class="temp">
+                </div>
+                <div class="box one">
+                    <span class="humidity main">Humidity</span>
+                    <span class="humidity data" id="humidity"></span>
+                </div>
             </div>
-            <div>
-                <p class="min-temp">Min Temperature</p>
-                <p class="min-temp data" id="min-temp"></p>
+            <div class="box">
+                <div>
+                    <img src="temp/min-temp.png" class="temp">
+                </div>
+                <div class="box one">
+                    <span class="min-temp main">Min Temperature</span>
+                    <span class="min-temp data" id="min-temp"></span>
+                </div>
             </div>
-            <div>
-                <p class="max-temp">Max Temperature</p>
-                <p class="max-temp data" id="max-temp"></p>
+            <div class="box">
+                <div>
+                    <img src="temp/max-temp.png" class="temp">
+                </div>
+                <div class="box one">
+                    <span class="max-temp main">Max Temperature</span>
+                    <span class="max-temp data" id="max-temp"></span>
+                </div>
             </div>
         </div>
     </div>
