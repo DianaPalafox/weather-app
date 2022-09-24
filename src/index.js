@@ -11,13 +11,12 @@ import "./style.css"
     const humidityData = document.querySelector("#humidity")
     const minTemp = document.querySelector("#min-temp")
     const maxTemp = document.querySelector("#max-temp")
+    
 
-    async function fetchWeatherData() {
+    async function fetchWeatherData(units, scale) {
         try {
             let searchValue = search.value; 
             if(!searchValue) {searchValue = "Mexico City"};
-
-            const units = "metric"; 
             
             const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=c99b6da448814b444b8c69bc9d4786c8&units=${units}`, {mode: "cors"});
             const weatherData = await response.json();
@@ -29,11 +28,11 @@ import "./style.css"
 
             weatherContainer.textContent = weatherData.weather[0].description.toUpperCase();
             locationContainer.textContent = weatherData.name; 
-            tempContainer.textContent = `${Math.ceil(weatherData.main.temp)  } ºC`;      
-            feelsLikeData.textContent = `${Math.floor(weatherData.main.feels_like)  } ºC`;   
+            tempContainer.textContent = `${Math.ceil(weatherData.main.temp)  } ${scale}`;      
+            feelsLikeData.textContent = `${Math.floor(weatherData.main.feels_like)  } ${scale}`;   
             humidityData.textContent = `${weatherData.main.humidity}%`
-            minTemp.textContent = `${Math.floor(weatherData.main.temp_min)  } ºC`;   
-            maxTemp.textContent = `${Math.ceil(weatherData.main.temp_max)  } ºC`;   
+            minTemp.textContent = `${Math.floor(weatherData.main.temp_min)  } ${scale}`;   
+            maxTemp.textContent = `${Math.ceil(weatherData.main.temp_max)  } ${scale}`;   
             
             changeIcon(iconData)
             changeBackgroundImage(imageData)
@@ -83,13 +82,30 @@ import "./style.css"
         elem.src = `icons/${result}.png`   
     }
 
+    function changeScales() {
+        const scales = document.querySelector(".temp-scales")
+            if(scales.innerHTML === "Display ºF"){
+                fetchWeatherData("Imperial", "ºF")
+                scales.textContent = "Display ºC"
+            }
+            else if(scales.innerHTML === "Display ºC"){
+                fetchWeatherData("Metric", "ºC")
+                scales.textContent = "Display ºF"
+            }
+    }
+
     form.addEventListener("submit", (e) => {
         e.preventDefault();
-        fetchWeatherData(); 
+        fetchWeatherData("Metric", "ºC"); 
         search.value =  ""; 
     }); 
-        
-    document.addEventListener("DOMContentLoaded", fetchWeatherData);
+    
+    document.querySelector(".temp-scales").addEventListener("click", (e) => {
+        e.preventDefault();
+        changeScales()
+    }); 
+
+    document.addEventListener("DOMContentLoaded", fetchWeatherData("Metric", "ºC"));
   
 
     

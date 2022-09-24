@@ -55,7 +55,13 @@ input {
 
 .content {
     margin-left: 30px; 
-    width: 400px; 
+}
+
+.temp-scales{
+    background: none;
+    border-style: none;
+    color: white;
+    cursor: pointer; 
 }
 
 .main-content{
