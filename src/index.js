@@ -83,10 +83,10 @@ import "./style.css"
         elem.src = `icons/${result}.png`   
     }
 
-
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetchWeatherData(); 
+        search.value =  ""; 
     }); 
         
     document.addEventListener("DOMContentLoaded", fetchWeatherData);
