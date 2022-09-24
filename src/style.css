@@ -1,19 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap');
+
 body {
     background-repeat: no-repeat;
     background-size: cover;
+    font-family: 'Quicksand', sans-serif;
 }
-
 
 .container {
     width: 100vw;
     height: 98vh;
-    border: 1px solid blue; 
+    color: white; 
+    display: flex;
+    justify-content: space-between;
 }
 
 .weather-container{
-    border: 1px solid blue; 
-    width: 25vw;
-    height: 10vh;
-
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
+.location-container{
+    font-size: 1.3rem;
+}
+
+.form-container{
+    margin-top: 20px;
+}
+
+.temp-container{
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+.content {
+    margin-left: 30px; 
+    width: 400px; 
+}
+
+.main-content{
+    width: 400px; 
+    margin-top: 40px; 
+    margin-left: 40px;
+}
+
+.main-container{
+    margin-top: 40px; 
+    margin-right: 20px;
+    width: 200px;
+}
+
+.main{
+    font-size: 0.7rem;
+}
+
+.data{
+    font-size: 1.7rem;
+}
+
+.icon-img{
+    width: 70px;
+    margin-top: 10px;
+}
+
+.temp {
+    width: 25px;
+    height: 25px;
+}
+
+.box{
+    display: flex; 
+}
+
+.box.one{
+    display: flex; 
+    flex-direction: column;
+    margin-left: 5px;
+    margin-bottom: 30px;
+}
