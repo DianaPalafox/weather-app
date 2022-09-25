@@ -18,7 +18,7 @@ const weatherApp = () => {
             let searchValue = search.value; 
             if(!searchValue) {searchValue = "Mexico City"};
             
-            const response = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=c99b6da448814b444b8c69bc9d4786c8&units=${units}`, {mode: "cors"});
+            const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${searchValue}&APPID=c99b6da448814b444b8c69bc9d4786c8&units=${units}`, {mode: "cors"});
             const weatherData = await response.json();
             const imageData = weatherData.weather[0].main; 
             const iconData = weatherData.weather[0].icon; 
