@@ -1,6 +1,6 @@
+import "./style.css"
 
 const weatherApp = () => {
-    fetchWeatherData("Metric", "ºC")
 
     const form = document.querySelector("form");
     const search = document.querySelector("#search");
@@ -25,6 +25,7 @@ const weatherApp = () => {
 
             weatherContainer.textContent = weatherData.weather[0].description.toUpperCase();
             locationContainer.textContent = weatherData.name; 
+
             tempContainer.textContent = `${Math.ceil(weatherData.main.temp)  } ${scale}`;      
             feelsLikeData.textContent = `${Math.floor(weatherData.main.feels_like)  } ${scale}`;   
             humidityData.textContent = `${weatherData.main.humidity}%`
@@ -35,10 +36,11 @@ const weatherApp = () => {
             changeBackgroundImage(imageData)
 
         } catch(error) {
-            console.log(error)
+            console.error(error);
         }
        
     }
+    fetchWeatherData("Metric", "ºC")
 
     const arrayOfImagesClear = ["./img/s0.jpeg", "./img/s1.jpeg", "./img/s2.jpeg", "./img/s3.jpeg", "./img/s4.jpeg", "./img/s5.jpeg", "./img/s6.jpeg", "./img/s7.jpg", "./img/s8.jpeg", "./img/s9.jpeg"];
     const arrayOfImagesCloudy = ["./img/c1.jpeg", "./img/c2.jpeg", "./img/c3.jpeg", "./img/c4.jpeg", "./img/c8.jpeg"];
@@ -94,7 +96,6 @@ const weatherApp = () => {
     form.addEventListener("submit", (e) => {
         e.preventDefault();
         fetchWeatherData("Metric", "ºC"); 
-        search.value =  ""; 
     }); 
     
     document.querySelector(".temp-scales").addEventListener("click", (e) => {
